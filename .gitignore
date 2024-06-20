@@ -1,0 +1,15 @@
+.gitignore
+.gitignore
+# Node.js dependencies
+/node_modules
+
+# Output directory for C++ competitive programming
+/.cph
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+jspm_packages/
