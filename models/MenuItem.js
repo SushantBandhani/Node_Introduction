@@ -16,10 +16,10 @@ const menuItemSchema= new mongoose.Schema({
     },
     is_drink:{
         type:Boolean,
-        default:false   //ex--> client ko drink chiye to vo is_drink me true krega , default ye false rahega
+        default:false   
     },
     ingredients:{
-        type:[String],  // array of String chiye to
+        type:[String],  
         default:[]
     },
     num_sales:{
