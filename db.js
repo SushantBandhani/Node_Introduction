@@ -17,7 +17,7 @@ const db=mongoose.connection;
 db.on('connected',()=>{
     console.log('Connected to Mongodb Server')
 })
-db.on('error',()=>{
+db.on('error',(err)=>{
     console.log('MongoDb connection error',err)
 })
 db.on('disconnected',()=>{
