@@ -13,3 +13,6 @@ npm-debug.log*
 
 # Dependency directories
 jspm_packages/
+
+#dotenv
+.env

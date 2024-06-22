@@ -1,8 +1,8 @@
 const mongoose =require("mongoose")  //importing mongoose
+require('dotenv').config()
 
 //Defining the URL
-const mongoURL='mongodb://localhost:27017/hotels'
- 
+const mongoURL=process.env.MONGODB_URL
 mongoose.connect(mongoURL,{
     useNewUrlParser:true,
     useUnifiedTopology:true
