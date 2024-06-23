@@ -15,7 +15,7 @@ const logrequest=(req,res,next)=>{
 app.use(logrequest)
 
 app.get('/',function(req,res){
-    res.send("Welcome to my hotel.. How i can help you>,we have list of menus")
+    res.send("Welcome to my hotel.. How i can help you,we have list of menus")
 })
 
 // Importing the router files
