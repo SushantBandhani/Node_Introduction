@@ -4,8 +4,15 @@ const app=express()
 const bodyParser=require('body-parser')
 require('dotenv').config()
 app.use(bodyParser.json())
-const port=3000;
 
+// Middleware function
+const logrequest=(req,res,next)=>{
+    console.log(`[${new Date().toLocaleString()}] Request made to :${req.originalUrl}`)
+    next();
+}
+
+//To implement in all routes
+app.use(logrequest)
 
 app.get('/',function(req,res){
     res.send("Welcome to my hotel.. How i can help you>,we have list of menus")
