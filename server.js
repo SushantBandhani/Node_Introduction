@@ -30,14 +30,14 @@ app.use(passport.initialize());
 const localAuthMiddleware=passport.authenticate('local',{session:false});
 
 
-app.get('/',localAuthMiddleware,logrequest,function(req,res){
+app.get('/',logrequest,function(req,res){
     res.send("Welcome to my hotel.. How i can help you,we have list of menus")
 })
 
 
 // Importing the router files
 const personRoutes=require('./routes/personRoutes')
-app.use('/person',personRoutes)
+app.use('/person',localAuthMiddleware,personRoutes)
 
 
 //Importing the menu router files
