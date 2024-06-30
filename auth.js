@@ -2,8 +2,6 @@ const passport=require('passport')
 const LocalStrategy=require('passport-local').Strategy
 const Person=require('./models/Person')
 
-
-
 // Define the LocalStrategy
 passport.use(new LocalStrategy(
     async (username, password, done) => {
@@ -19,7 +17,8 @@ passport.use(new LocalStrategy(
 
 
             // Check password (Ensure password comparison logic is correct)
-            const isPasswordMatch = user.password === password; // In practice, use bcrypt to compare hashed passwords
+            const isPasswordMatch = await user.comparePassword(password); // In practice, use bcrypt to compare hashed passwords
+
             if (isPasswordMatch) {
                 return done(null, user);
             } else {
