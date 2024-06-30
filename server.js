@@ -10,10 +10,11 @@ app.use(bodyParser.json())
 
 
 // Middleware function
-const logrequest=(req,res,next)=>{
-    console.log(`[${new Date().toLocaleString()}] Request made to :${req.originalUrl}`)
+const logrequest = (req, res, next) => {
+    console.log(`[${new Date().toLocaleString()}] Request made to: ${req.path}`);
     next();
-}
+};
+
 
 
 //To implement in all routes
