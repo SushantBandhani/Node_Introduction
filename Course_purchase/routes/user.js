@@ -3,6 +3,7 @@ const { User,Course } = require('../db')
 const router=express.Router()
 // const {Admin, Course}=require('../db/index')
 const userMiddleware=require("../middleware/user")
+const jwt=require('jsonwebtoken')
 
 router.post('/signup',(req,res)=>{
     const username=req.body.username
@@ -27,8 +28,8 @@ router.get('/courses',async(req,res)=>{
 })
 
 router.post('/courses/:courseId',userMiddleware,async(req,res)=>{
-    const courseId=req.params.courseId
-    const username=req.headers.username;
+    // const courseId=req.params.courseId
+    const username=req.username;
     await User.updateOne({
         username:username},
         { "$push": { purchasedCourses: courseId } }
